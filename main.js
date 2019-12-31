@@ -8,7 +8,7 @@ function getGain() {
 	for (var i = 0; i<10; i++) {
 	gain *= Math.floor(Math.pow((1+data.prestiges[i][0]), (1+data.prestiges[i][1])));
 	}
-	return gain
+	return Math.floor(gain*100)/100;
 }
 
 function getRequirement(id) {
