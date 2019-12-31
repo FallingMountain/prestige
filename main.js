@@ -1,6 +1,6 @@
 var data = {
 	coins: 0,
-	prestiges: [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
+	prestiges: [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
 };
 
 function getGain() {
@@ -13,7 +13,7 @@ function getGain() {
 
 function getRequirement(id) {
 	if (id === 0) {
-		return Math.floor(Math.pow(1.5,data.prestiges[0][0])*10);
+		return Math.floor(Math.pow(1.5 - (game.prestiges[0][2]*0.1),data.prestiges[0][0])*10);
 	} else {
 		return Math.pow(id+1,data.prestiges[id][0]+1)
 	}
@@ -43,9 +43,16 @@ function update() {
 	localStorage.whydididothis = JSON.stringify(data);
 }
 function boostMac(tier) {
-	var boost1 = Math.log10(data.prestiges[tier][0]);
-	if (boost1 > data.prestiges[tier][1]) data.prestiges[tier][1] = boost1
+	if (tier === 0) {
+	var boost1 = Math.log10(data.prestiges[tier][0]*(data.prestiges[0][2]+1));
+	
 	data.prestiges[tier][0] = 0;
+	if (boost1 > 1.5 && data.prestiges[0][2] === 0) {
+		data.prestiges[0][2] = 1;
+		data.prestiges[0][0] = 0;
+	}
+	if (boost1 > data.prestiges[tier][1]) data.prestiges[tier][1] = boost1
+	}
 }
 function draw() {
 	document.getElementById("coins").innerHTML = Math.round(data.coins);
