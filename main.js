@@ -63,7 +63,7 @@ function draw() {
 	for(var i = 0; i < 10; i++) {
 		document.getElementById("tier"+(i+1)+"cost").innerHTML = getRequirement(i);
 		document.getElementById("tier"+(i+1)+"a").innerHTML = data.prestiges[i][0];
-		document.getElementById("tier"+(i+1)+"mul").innerHTML = "x"+(data.prestiges[i][0]+1);
+		document.getElementById("tier"+(i+1)+"mul").innerHTML = "x"+(Math.floor(Math.pow((1+data.prestiges[i][0]), (1+data.prestiges[i][1]))));
 		if (canActivatePrestige(i)) {
 			document.getElementById("tier"+(i+1)+"btn").disabled = false;
 		} else {
@@ -71,6 +71,7 @@ function draw() {
 		}
 	}
 	document.getElementById("tier1b").innerHTML = "^"+((Math.floor(data.prestiges[0][1]*100)/100)+1);
+	
 }
 
 window.addEventListener("load",function () {
