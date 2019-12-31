@@ -44,8 +44,7 @@ function update() {
 }
 function boostMac(tier) {
 	let boost = Math.log10(data.prestiges[tier][0]);
-	if (boost > data.prestiges[tier][1]) return boost
-	else return data.prestiges[tier][1]
+	if (boost > data.prestiges[tier][1]) data.prestiges[tier][1] = boost
 }
 function draw() {
 	document.getElementById("coins").innerHTML = Math.round(data.coins);
@@ -71,7 +70,7 @@ function draw() {
 			document.getElementById("tier"+(i+1)+"btn").disabled = true;
 		}
 	}
-	document.getElementById("tier1b").innerHTML = "^"+Math.floor(data.prestiges[0][1]);
+	document.getElementById("tier1b").innerHTML = "^"+(Math.floor(data.prestiges[0][1])+1);
 }
 
 window.addEventListener("load",function () {
