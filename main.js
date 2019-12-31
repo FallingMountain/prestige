@@ -47,7 +47,7 @@ function boostMac(tier) {
 	var boost1 = Math.log10(data.prestiges[tier][0]*(data.prestiges[0][2]+1));
 	
 	data.prestiges[tier][0] = 0;
-	if (boost1 > 1.5 && data.prestiges[0][2] === 0) {
+	if (boost1 >= 1.5 && data.prestiges[0][2] === 0) {
 		data.prestiges[0][2] = 1;
 		data.prestiges[0][0] = 0;
 	}
