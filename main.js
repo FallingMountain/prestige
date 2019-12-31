@@ -43,8 +43,8 @@ function update() {
 	localStorage.whydididothis = JSON.stringify(data);
 }
 function boostMac(tier) {
-	let boost = Math.log10(data.prestiges[tier][0]);
-	if (boost > data.prestiges[tier][1]) data.prestiges[tier][1] = boost
+	var boost1 = Math.log10(data.prestiges[tier][0]);
+	if (boost1 > data.prestiges[tier][1]) data.prestiges[tier][1] = boost1
 }
 function draw() {
 	document.getElementById("coins").innerHTML = Math.round(data.coins);
