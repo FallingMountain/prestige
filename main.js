@@ -5,7 +5,7 @@ var data = {
 
 function getGain() {
 	var gain = 1
-	for (var i = 0, i<10, i++) {
+	for (var i = 0; i<10; i++) {
 	gain *= Math.floor(Math.pow((1+data.prestiges[i][0]), (1+data.prestiges[i][1])));
 		
 	}
