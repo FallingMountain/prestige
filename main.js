@@ -48,7 +48,7 @@ function boostMac(tier) {
 	else return data.prestiges[tier][1]
 }
 function draw() {
-	document.getElementById("coins").innerHTML = data.coins;
+	document.getElementById("coins").innerHTML = Math.round(data.coins);
 	document.getElementById("gain").innerHTML = getGain();
 	//To hide the boost machine
 	var boostT1 = document.getElementsByClassName("boost");
