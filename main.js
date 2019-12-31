@@ -71,7 +71,7 @@ function draw() {
 			document.getElementById("tier"+(i+1)+"btn").disabled = true;
 		}
 	}
-	document.getElementById("tier1b") = "^"+Math.floor(data.prestiges[0][1]);
+	document.getElementById("tier1b").innerHTML = "^"+Math.floor(data.prestiges[0][1]);
 }
 
 window.addEventListener("load",function () {
