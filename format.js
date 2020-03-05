@@ -151,7 +151,7 @@ function formatValue(notation, value, places, placesUnder1000, noInf) {
     if (notation === 'Iroha' && Decimal.lt(value, Number.MAX_VALUE)) return iroha(value, 5)
     if (Decimal.eq(value, 1/0)) return "Infinite"
 
-	if (value < 1000) return (value).toFixed(placesUnder1000);
+	if (value < 1000) return value.toFixed(placesUnder1000);
 	if (notation === "Hexadecimal") {
 		value = Decimal.pow(value, 1/Math.log10(16))
 		var mantissa = Math.pow(value.m, Math.log10(16))
