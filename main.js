@@ -1,6 +1,6 @@
 var game = {
 	coins: new Decimal(0),
-	prestiges: [[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0],[new Decimal(0),0,0]],
+	prestiges: [[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0],[new Decimal(0),new Decimal(0),0]],
 	options: {
 		notation:"Scientific"
 	}
