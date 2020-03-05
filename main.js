@@ -73,7 +73,7 @@ function draw() {
 	for(var i = 0; i < 10; i++) {
 		document.getElementById("tier"+(i+1)+"cost").innerHTML = shortenMoney(getRequirement(i));
 		document.getElementById("tier"+(i+1)+"a").innerHTML = shortenMoney(game.prestiges[i][0]);
-		document.getElementById("tier"+(i+1)+"mul").innerHTML = "x"+shortenMoney(new Decimal(1+game.prestiges[i][0]).pow(game.prestiges[i][1].plus(1))));
+		document.getElementById("tier"+(i+1)+"mul").innerHTML = "x"+shortenMoney(new Decimal(1+game.prestiges[i][0]).pow(game.prestiges[i][1].plus(1)));
 		if (canActivatePrestige(i) === 1) {
 			document.getElementById("tier"+(i+1)+"btn").disabled = false;
 		} else {
